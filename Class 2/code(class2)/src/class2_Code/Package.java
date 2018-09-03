@@ -225,7 +225,7 @@ public class Package {
 		
 		//===========================================================
 		
-		Scanner sc = new Scanner(System.in);
+/*		Scanner sc = new Scanner(System.in);
 		char ch = sc.next().charAt(0);
 
 		if(ch>=65 && ch<=90)
@@ -235,6 +235,131 @@ public class Package {
 		else
 			System.out.println("-1");
 		
+	*/
+		
+		
+		
+		
+		/*
+		 * 
+		 * Scanner sc = new Scanner(System.in);
+		int n= sc.nextInt();
+		int i=1;
+		if(n>=1)
+		{
+			System.out.println("1");
+		}
+		if(n>=2)
+		{
+			System.out.println("11");
+		}
+		
+		for( i=3;i<=n;i++)
+		{
+			System.out.print("1");
+			for(int j=i-2;j<=i;i++)
+			{
+				System.out.print("2");
+			}
+			System.out.print("1");
+			System.out.println();
+		}
+		
+		*/
+		/*
+		Scanner sc = new Scanner(System.in);
+		int n= sc.nextInt();
+		int i=1;
+		if(n>=1)
+		{
+			System.out.println("1");
+		}
+		if(n>=2)
+		{
+			System.out.println("11");
+		}
+		
+		for( i=3;i<=n;i++)
+		{
+			System.out.print(i-1);
+			for(int j=i-2;j<=i;i++)
+			{
+				System.out.print("0");
+			}
+			System.out.print(i-1);
+			System.out.println();
+		}*/
+	
+	
+/*	     Scanner sc = new Scanner(System.in);
+	      int basic = sc.nextInt();
+	      char ch= sc.next().charAt(0);
+	      
+	      int allow=0;
+	      if(ch=='A')
+	        allow=1700;
+	      else if(ch=='B')
+	        allow=1500;
+	      else 
+	        allow=1300;
+	      
+	      int total=(159*basic/100)+allow;
+	      System.out.println(Math.round(total));
+*/
+
+		
+/*
+		Scanner sc = new Scanner(System.in);
+      	int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+      int d=b*b-4*a*c;
+      if(d==0)
+      {
+        System.out.println("0");
+        System.out.println( -b/(2*a)+" "+ -b/(2*a)); 
+      } 
+      if(d>=0)
+      {
+        System.out.println("1");
+        System.out.println( Math.round((-b+Math.sqrt(d))/(2*a))+" "+ Math.round((-b-Math.sqrt(d))/(2*a)));
+      }if(d<=0)
+      {
+        System.out.println("-1");
+      }
+	    */  
+	
+		
+		Scanner sc = new Scanner(System.in);
+      	double a=sc.nextInt();
+      	double b=sc.nextInt();
+      	double c=sc.nextInt();
+      	double d=(b*b)-(4*a*c);
+      	double p = Math.sqrt(d);
+      	double r1= (-b + p)/(2*a);
+      	double r2= (-b - p)/(2*a);
+      if(d==0)
+      {
+    	  
+        System.out.println("0");
+        System.out.println( -b/(2*a)+" "+ -b/(2*a)); 
+      } 
+     else if(d>0)
+      {
+        System.out.println("1");
+        System.out.println( Math.round((-b+Math.sqrt(d))/(2*a))+" "+ Math.round((-b-Math.sqrt(d))/(2*a)));
+          
+      }
+      else
+      {
+        System.out.println("-1");
+      }
+	      
+	
+	      
 	
 	}
+
+	
+	
 }
