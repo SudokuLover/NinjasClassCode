@@ -51,10 +51,11 @@ public class SelectionSort {
 		
 	
 	}
-	public static int[] takeInput(){
+	public static void takeInput(){
 		Scanner sc = new Scanner(System.in);
 
-		int n=sc.nextInt();
+		String s=sc.nextLine();
+/*		int n=sc.nextInt();
 		int arr[]=new int[n];
 
 		for(int i=0;i<n;i++)
@@ -64,6 +65,10 @@ public class SelectionSort {
 
 		sc.close();
 		return arr;
+	
+*/	
+	ans(s.length(),s);	
+	
 	}	
 	public static void printArray(int []arr){
 
@@ -75,10 +80,45 @@ public class SelectionSort {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int k[]=takeInput();
-		bubbleSort(k);
-		printArray(k);
+		//int k[]=
+		takeInput();
+		//bubbleSort(k);
+		//printArray(k);
 	}
 
+
+		public static void ans(int n, String str) {
+			//Write your code here
+		
+	      int arr[]=new int[26];
+	      if(n<26)
+	      {
+	        System.out.println("NO");
+	      }
+	      else{
+	       str=str.toLowerCase();
+	        for(int i=0;i<n;i++)
+	        {
+	          int k=str.charAt(i)-97;
+	          //System.out.println(k+" "+str.charAt(i));
+	          
+	         if(arr[k]!=0)
+	            arr[k]++;
+	        }
+	      
+	       for(int i=0;i<26;i++)
+	        {
+	          if(arr[i]!=0)
+	           {
+	     		   System.out.println("NO");
+	            	return ;
+	           }
+	      	}
+	      
+	        System.out.println("YES");
+	      	return ;
+	    
+	      }
+	}
 
 }
