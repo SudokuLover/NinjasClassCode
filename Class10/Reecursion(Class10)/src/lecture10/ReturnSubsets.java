@@ -2,7 +2,7 @@ package lecture10;
 
 import java.util.Scanner;
 
-public class Solution2 {
+public class ReturnSubsets {
 
 	// Return a 2D array that contains all the subsets
 	public static int[][] subsets(int input[]) {
