@@ -83,7 +83,18 @@ public class Merge {
 		int[] input = takeInput();
 		mergeSort(input);
 		printArray(input);
+
+		 int a='2'-'0';
+         int b='3'-'0';
+         System.out.println(a+" "+b);
+         int c=(10*a)+b;
+         char ch=(char)(c+96);
+		//System.out.print((char)((ch-'0')+96));
+         System.out.print(ch);
 	}
+	
+	
+	
 
 }
 
