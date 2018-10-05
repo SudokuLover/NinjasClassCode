@@ -15,6 +15,7 @@ public class printPermutations {
 		if(index==input.length())
         {
           System.out.println(str);
+          return ;
         }
      else{
     	 int l=1;
