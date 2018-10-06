@@ -3,10 +3,10 @@ package lecture12;
 import java.util.Scanner;
 
 /*Given non negative int n, compute recursively(no loops) the count of the occurrence of 8 as a digit,
- except that an 8 with another 8 immidiatly to its left counts double , so 8818 yields 4
+ except that an 8 with another 8 immediately to its left counts double , so 8818 yields 4
  
  eg count8(818) -> 2
- eg count8(8818) -> 4
+ eg count8(8818)-> 4
  */
 public class GameOf8 {
 	
@@ -21,19 +21,14 @@ public class GameOf8 {
 			
 		 if(n%10==8)
 		{
-			if(n%100==8)
-				k=1+count(n/10);
-			else if(k==0)
-			{
-				k=1+count(n/10);
-			}
-			else
+			if(n%100==88)
 				k=2*count(n/10);
+			else
+				k=1+count(n/10);
 		}
 		else{
 			return count(n/10);
 		}
-	//System.out.println(k);
 		return k;
 	}
 	
@@ -51,9 +46,7 @@ public class GameOf8 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		//System.out.println(n);
 		n=reverse(n);
-		//System.out.println(n);
 		System.out.println(count(n));
 	
 		sc.close();
