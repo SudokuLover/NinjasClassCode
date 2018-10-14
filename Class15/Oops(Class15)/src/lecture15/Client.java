@@ -8,13 +8,22 @@ public class Client {
 
 		b.heigth=2;
 		b.breadth=2;
+		
+		// used in case of if (len>3 && len <7)
+		
+		//b.setLength(-9);
+		b.setLength(5);
+		
+		
+		//when it is used in case of exception
 		//b.length=2;
-		try {
+		
+		/*try {
 			b.setLength(-9);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		b.price=20000;
 		b.color="White";
