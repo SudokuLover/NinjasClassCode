@@ -4,7 +4,7 @@ public class Client {
 	
 	public static void main(String agrs[])
 	{
-		Bed b=new Bed();
+		Bed b=new Bed(5,2,3,10000,"White");
 
 		b.heigth=2;
 		b.breadth=2;
@@ -32,9 +32,14 @@ public class Client {
 		System.out.println(b.getLength());
 		
 		Bed b1=new Bed();
+		
 
 		System.out.println(b1);
 		//System.out.println(b1.length);
+		System.out.println(Bed.getBeds());
+		
+		//System.out.println(b1.NoOfBeds); // static things belongs to a class therefore never use with object rather use it with class 
+		
 		
 	}
 }
