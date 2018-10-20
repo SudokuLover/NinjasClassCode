@@ -1,6 +1,6 @@
 package queue;
 
-public class Queue {
+public class Queue1 {
 	private int data[];
 	private int front;
 	private int rear;
