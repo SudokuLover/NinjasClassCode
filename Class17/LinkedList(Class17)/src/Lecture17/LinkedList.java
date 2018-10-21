@@ -1,5 +1,6 @@
 package Lecture17;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class LinkedList {
@@ -25,8 +26,7 @@ public class LinkedList {
 			Node<Integer> node = new Node<Integer>(data);
 			if(head==null)
 			{
-				//temp;
-				head=node;
+				temp=head=node;
 			}
 			else{
 				temp=head;
@@ -35,7 +35,7 @@ public class LinkedList {
 					temp=temp.next;
 				}
 				temp.next=node;
-				//temp=node;
+				temp=temp.next;
 			}
 			data=s.nextInt();
 		}
@@ -43,6 +43,11 @@ public class LinkedList {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		BigInteger l=new BigInteger("239158029750150104");
+		BigInteger h=new BigInteger("998244353");
+        BigInteger j= l.remainder(h);
+         System.out.println(j);
+         
 		Node<Integer> n1= new Node<Integer>(10);
 		Node<Integer> n2= new Node<Integer>(20);
 		n1.next=n2;
