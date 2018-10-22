@@ -50,5 +50,5 @@ public class Stack {
 		int element=data[top--];
 		return element;
 	}
-	
 }
+	
