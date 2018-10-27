@@ -1,19 +1,19 @@
-package queue;
+package lec19;
 
-public class Queue {
-	private int data[];
+public class GenericQueue<T> {
+	private T data[];
 	private int front;
 	private int rear;
 	private int size;
 	
-	public Queue(){
-		data=new int[5];
+	public GenericQueue(){
+		data=(T[])new Object[1000];
 		front=-1;
 		rear=-1;
 		size=0;
 	}
-	public Queue(int capacity){
-		data=new int[capacity];
+	public GenericQueue(int capacity){
+		data=(T[])new Object[capacity];
 		front=-1;
 		rear=-1;
 		size=0;
@@ -28,7 +28,7 @@ public class Queue {
 		return getSize()==0;
 	}
 	
-	public void enqueue(int element){
+	public void enqueue(T element){
 		if(isFull())
 		{
 			//Throw Error
@@ -42,13 +42,13 @@ public class Queue {
 		data[rear]=element;
 		size++;
 	}
-	public int dequeue(){
+	public T dequeue(){
 		if(isEmpty())
 		{
 			//Throw Error
-			return -1000;
+			return null;
 		}
-		int val=data[front];
+		T val=data[front];
 		
 		front=(front+1)%data.length;
 		size--;
@@ -59,11 +59,11 @@ public class Queue {
 		}
 		return val;
 	}
-	public int front(){
+	public T front(){
 		if(isEmpty())
-			return -1000;
+			return null;
 	
-		int val=data[front];
+		T val=data[front];
 		//front=(front+1)%data.length;
 		return val;
 	}
