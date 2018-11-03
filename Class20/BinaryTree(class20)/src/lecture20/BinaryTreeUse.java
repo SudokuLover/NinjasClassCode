@@ -31,17 +31,57 @@ public class BinaryTreeUse {
 			int rightChildData=sc.nextInt();
 			if(rightChildData!=-1)
 			{
-				BinaryTreeNode<Integer> rightChild=new BinaryTreeNode<>(leftChildData);
-				node.left=rightChild;
+				BinaryTreeNode<Integer> rightChild=new BinaryTreeNode<>(rightChildData);
+				node.right=rightChild;
 				pendingNodes.enqueue(rightChild);
 			}
 		}
 		return root;
-
 	}
-	public static void main(String args[]){
+	
+	public static void preOrderTraversal(BinaryTreeNode<Integer> root)
+	{
+		if(root==null)
+			return ;
+		
+		System.out.print(root.data+" ");
+		preOrderTraversal(root.left);
+		preOrderTraversal(root.right);
+		
+	}
+	
+	public static void postOrderTraversal(BinaryTreeNode<Integer> root)
+	{
+		if(root==null)
+			return ;
+		
+		postOrderTraversal(root.left);
+		postOrderTraversal(root.right);
+		System.out.print(root.data+" ");
+	}
+	public static void inOrderTraversal(BinaryTreeNode<Integer> root)
+	{
+		if(root==null)
+			return ;
+		
+		inOrderTraversal(root.left);
+		System.out.print(root.data+" ");
+		inOrderTraversal(root.right);
+	}
+	
+		public static void main(String args[]){
 
-		BinaryTreeNode<Integer> n1=takeInput();
+		BinaryTreeNode<Integer> root=takeInput();
+		System.out.print("InOrderTraversal : ");	
+		inOrderTraversal(root);
+		System.out.println();
+		System.out.print("PreOrderTraversal : ");
+		preOrderTraversal(root);
+		System.out.println();
+		System.out.print("PostOrderTraversal : ");
+		postOrderTraversal(root);
+		System.out.println();
+		
 		/*BinaryTreeNode<Integer> n1= new BinaryTreeNode<Integer>(10);
 		BinaryTreeNode<Integer> n2= new BinaryTreeNode<Integer>(20);
 		BinaryTreeNode<Integer> n3= new BinaryTreeNode<Integer>(30);

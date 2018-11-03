@@ -2,10 +2,11 @@ package lecture5;
 
 import java.util.Scanner;
 
-//code 4
 public class FlowOfArraay {
 
 	public static int[] takeInput(){
+		
+		ArraysDemo a=new ArraysDemo();
 		Scanner sc = new Scanner(System.in);
 
 		int n=sc.nextInt();
