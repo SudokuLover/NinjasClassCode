@@ -61,7 +61,7 @@ private  ArrayList<Integer> heap;
 		int leftChildIndex =2 * i +1;
 		int rightChildIndex =2 * i +2;
 
-		if(leftChildIndex<heap.size()-1)
+		if(leftChildIndex>=heap.size())
 			return;
 		
 		int minIndex=i;
@@ -84,14 +84,10 @@ private  ArrayList<Integer> heap;
 		heap.set(j,data);		
 	}
 	
-}
-class PriorityQueueException extends Exception{
-	String s;
-	
-	public PriorityQueueException(String s){
-		this.s=s;
-	}
-	public String toString(){
-		return s;
+	public void print(){
+		System.out.println();
+		for(int var : heap)
+			System.out.print(var+" ");
+		System.out.println();
 	}
 }

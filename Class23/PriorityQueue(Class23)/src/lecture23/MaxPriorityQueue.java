@@ -1,10 +1,12 @@
 package lecture23;
-import java.util.ArrayList;
-public class MinPriorityQueue {
 
-	private  ArrayList<Integer> heap;
+import java.util.ArrayList;
+
+public class MaxPriorityQueue {
+
+private  ArrayList<Integer> heap;
 	
-	public MinPriorityQueue(){
+	public MaxPriorityQueue(){
 		heap= new ArrayList<>();
 	}
 	public boolean isEmpty()
@@ -34,7 +36,7 @@ public class MinPriorityQueue {
 		
 		int temp=(index-1)/2;
 		
-		if(heap.get(temp)>heap.get(index))
+		if(heap.get(temp)<heap.get(index))
 		{
 			swap(temp,index);
 			insertHeapify(temp);
@@ -58,13 +60,11 @@ public class MinPriorityQueue {
 
 		if(leftChildIndex>=heap.size())
 			return;
-		//if(rightChildIndex<heap.size()-1)
-			//return;
 		
 		int minIndex=index;
-		if(heap.get(leftChildIndex)<heap.get(minIndex))
+		if(heap.get(leftChildIndex)>heap.get(minIndex))
 			minIndex=leftChildIndex;
-		if((rightChildIndex<heap.size()-1) && heap.get(rightChildIndex)<heap.get(minIndex))
+		if((rightChildIndex<heap.size()-1) && heap.get(rightChildIndex)>heap.get(minIndex))
 			minIndex=rightChildIndex;
 		
 		if(minIndex!=index)
@@ -87,15 +87,5 @@ public class MinPriorityQueue {
 		for(int var : heap)
 			System.out.print(var+" ");
 		System.out.println();
-	}
-}
-class PriorityQueueException extends Exception{
-	String s;
-	
-	public PriorityQueueException(String s){
-		this.s=s;
-	}
-	public String toString(){
-		return s;
 	}
 }

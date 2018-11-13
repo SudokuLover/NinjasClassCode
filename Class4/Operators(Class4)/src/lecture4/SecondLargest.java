@@ -1,6 +1,7 @@
+package lecture4; 
 import java.util.Scanner;
 
-public class Main {
+public class SecondLargest {
 	
 	public static void main(String[] args) {
 		// Write your code here

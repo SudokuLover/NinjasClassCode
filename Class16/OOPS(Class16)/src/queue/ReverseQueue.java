@@ -7,7 +7,7 @@ public class ReverseQueue {
 		Scanner s=new Scanner(System.in);
 		
 		int size = s.nextInt();
-		Queue<Integer> input = new Queue<Integer>();
+		Queue input = new Queue();
 		for(int i = 0; i < size; i++) {
 			input.enqueue(s.nextInt());
 		}
@@ -16,7 +16,7 @@ public class ReverseQueue {
 			System.out.print(input.dequeue() + " ");
 		}
 	}
-	public static void reverseQueue(Queue<Integer> q) {
+	public static void reverseQueue(Queue q) {
 		// Write your code here
 
       	int k=q.dequeue();
@@ -24,7 +24,7 @@ public class ReverseQueue {
       q.enqueue(k);
 	}
 }
-class Queue<T> {
+/*class Queue<T> {
 
 	class Node<T> {
 		T data;
@@ -85,3 +85,4 @@ class Queue<T> {
 		return temp;
 	}
 }
+*/

@@ -16,6 +16,12 @@ public class Stack {
 	public int getSize(){
 		return top+1;
 	}
+	public int top() throws StackEmptyException {
+		if(isEmpty())
+              throw new StackEmptyException("stack is empty");
+      return data[++top];
+	}
+	
 	public boolean isFull(){
 	/*	if(data.length==getSize())
 			return true;
@@ -50,5 +56,6 @@ public class Stack {
 		int element=data[top--];
 		return element;
 	}
+	
 }
 	

@@ -7,7 +7,7 @@ public class Scope {
 		
 		
 		int a=10;
-		double a=100 ;
+		double a1=100 ;
 		
 		//not allowed to redefine same variable
 
@@ -40,7 +40,7 @@ public class Scope {
 		for(int i=1;i<=5;i++)
 		{
 			System.out.println(i);
-			int a=10;
+			int a2=10;
 		}
 	}
 

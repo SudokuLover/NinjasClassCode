@@ -2,7 +2,7 @@ package lecture16;
 import java.util.Scanner;
 
 
-class LinkedListNode<T> {
+/*class LinkedListNode<T> {
 	public T data;
 	public LinkedListNode<T> next;
 
@@ -20,7 +20,7 @@ class LinkedListNode<T> {
 	}
 
 }
-
+*/
 
 
 public class LinkeddListRecursion {

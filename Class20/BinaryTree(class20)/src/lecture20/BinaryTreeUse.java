@@ -2,8 +2,6 @@ package lecture20;
 
 import java.util.Scanner;
 
-import lec19.TreeNode;
-
 public class BinaryTreeUse {
 	
 	

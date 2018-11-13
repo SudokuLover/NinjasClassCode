@@ -1,11 +1,11 @@
 package Lecture17;
 
 /*
-class LinkedListNode<T> {
+class Node<T> {
 	public T data;
-	public LinkedListNode<T> next;
+	public Node<T> next;
 
-	public LinkedListNode(T data) {
+	public Node(T data) {
 		this.setData(data);
 		this.next = null;
 	}
@@ -20,29 +20,29 @@ class LinkedListNode<T> {
 
 }
 * */
-public class Solution {
+public class solution {
 	
-	public static LinkedListNode<Integer> reverse_R(LinkedListNode<Integer> head) {
-	LinkedListNode<Integer>  temp=null;	
+	public static Node<Integer> reverse_R(Node<Integer> head) {
+	Node<Integer>  temp=null;	
       temp=reverse(head,temp);
       return temp;
 	}
   
-	public static LinkedListNode<Integer> reverse(LinkedListNode<Integer> head,LinkedListNode<Integer> temp) {
+	public static Node<Integer> reverse(Node<Integer> head,Node<Integer> temp) {
 		
       if(head.next==null)
       {
-        temp=new  LinkedListNode<Integer>(head.data);
+        temp=new  Node<Integer>(head.data);
         return temp;
       }
       temp=reverse(head.next,temp);
-      LinkedListNode<Integer> node=new LinkedListNode<Integer>(head.data)  ;
-      LinkedListNode<Integer> temp1=temp;
+      Node<Integer> node=new Node<Integer>(head.data)  ;
+      Node<Integer> temp1=temp;
       while(temp1.next!=null)
       {
         temp1=temp1.next;
       }
-      temp1.next=node;x`
+      temp1.next=node;
       return temp;
 	}
 }

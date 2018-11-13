@@ -17,7 +17,8 @@ public class Runner {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 
-		Stack<Integer> st = new Stack<Integer>();
+		//Stack<Integer> st = new Stack<Integer>();
+		Stack st = new Stack();
 
 		int choice = s.nextInt();
 		int input;
@@ -28,11 +29,7 @@ public class Runner {
 				st.push(input);
 			}
 			else if(choice == 2) {
-				try {
-					System.out.println(st.pop());
-				} catch (StackEmptyException e) {
-					System.out.println(-1);
-				}
+				System.out.println(st.pop());
 			}
 			else if(choice == 3) {
 				try {
@@ -42,7 +39,7 @@ public class Runner {
 				}
 			}
 			else if(choice == 4) {
-				System.out.println(st.size());
+				System.out.println(st.getSize());
 			}
 			else if(choice == 5) {
 				System.out.println(st.isEmpty());
@@ -51,7 +48,7 @@ public class Runner {
 		}
 	}
 }
- class Stack<T> {
+/* class Stack<T> {
 	private T data[];
   	private int top;
 	public Stack() {
@@ -89,7 +86,7 @@ public class Runner {
       return data[++top];
 	}
 }
-class StackEmptyException extends Exception {
+*/class StackEmptyException extends Exception {
 	  String s;
 
 	  public StackEmptyException(String s){
