@@ -56,7 +56,7 @@ public class Solution {
     
     }
 */
-	public static void runningMedian(int arr[]) {
+	/*public static void runningMedian(int arr[]) {
 		
     	
 	      PriorityQueue<Integer> pq=new PriorityQueue<>(); 
@@ -111,6 +111,9 @@ public class Solution {
 	      }
 	    
 	    }
+*/	
+	
+	
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
@@ -118,7 +121,9 @@ public class Solution {
 		for(int i=0; i<n; i++){
 			arr[i] = s.nextInt();
 		}
+	
 		
-		runningMedian(arr);
+	
+		//runningMedian(arr);
 	}
 }
