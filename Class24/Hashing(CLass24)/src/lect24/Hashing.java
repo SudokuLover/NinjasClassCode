@@ -13,8 +13,6 @@ class KeyValue{
 public class Hashing {
 	
 	public static KeyValue maxFrequency(int arr[]){
-		int max=0;
-		int maxNumber=0;
 		
 		HashMap<Integer,Integer> map = new 	HashMap<>();
 		
@@ -25,6 +23,9 @@ public class Hashing {
 			else
 				map.put(key, 1);		
 		}
+		int max=Integer.MIN_VALUE;
+		int maxNumber=Integer.MIN_VALUE;
+	
 		for(int key:arr)
 		{
 				if(max< map.get(key)){
