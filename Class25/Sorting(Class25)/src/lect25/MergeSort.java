@@ -3,16 +3,6 @@ package lect25;
 import java.util.Scanner;
 
 public class MergeSort {
-	public static void mergeSort(int []arr,int start,int end)
-	{
-		if(start>=end)
-			return ;
-		int mid=(start+end)/2;
-
-		mergeSort(arr, start, mid);
-		mergeSort(arr,  mid+1,end);
-		merge(arr,start,end);
-	}	
 	public static void bubbleSort(int []arr,int start,int end)
 	{
 		for(int i=0;i<end;i++)
@@ -28,6 +18,16 @@ public class MergeSort {
 				}
 			}
 		}
+	}	
+	public static void mergeSort(int []arr,int start,int end)
+	{
+		if(start>=end)
+			return ;
+		int mid=(start+end)/2;
+
+		mergeSort(arr, start, mid);
+		mergeSort(arr,  mid+1,end);
+		merge(arr,start,end);
 	}	
 	public static void merge(int []arr,int start,int end)
 	{
