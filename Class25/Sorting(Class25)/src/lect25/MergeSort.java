@@ -67,48 +67,133 @@ public class MergeSort {
 		}
 
 	}
+	
+	public static void quickSort(int []arr,int start,int end)
+	{
+		if(start>=end)
+			return ;
+		int k=partitionByMaam(arr,start,end);
+		//int k=partition(arr,start,end);
+		quickSort(arr, start,k-1);	
+		quickSort(arr, k+1,end);
+	}	
+	public static int partition(int []arr,int start,int end)
+	{
+		int k=arr[end];
+		int j=start-1;
+		for(int i=start;i<end;i++)
+		{
+			if(arr[i]<k)
+			{
+				j++;
+				int l=arr[j];
+				arr[j]=arr[i];
+				arr[i]=l;
+		//		System.out.println(arr[i]+" "+arr[j]);
+			}
+		}
+		j++;
+		int l=arr[j];
+		arr[j]=arr[end];
+		arr[end]=l;
+
+		return j;
+	}
+	public static int partitionByMaam(int []arr,int start,int end)
+	{
+		int pivotElement = arr[start];
+		int count=0;
+		for(int i=start;i<=end;i++)
+		{
+			if(arr[i]<pivotElement)
+			{
+				count++;
+			}
+		}
+		int pivotIndex=start+count;
+		arr[start]=arr[pivotIndex];
+		arr[pivotIndex]=pivotElement;
+		
+		int i=start;
+		int j=end;
+		while(i<pivotIndex && j > pivotIndex)
+		{
+			if(arr[i]<pivotElement)
+				i++;
+			else if(arr[j]>=pivotElement)
+				j--;
+			else
+			{
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+				i++;
+				j--;
+			}
+		}
+	return pivotIndex;	
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		int arr[]=new int[n];
-		for(int i=0;i<n;i++)
-		{
-			arr[i]=n-i;
-		}
-		/*for(int val : arr)
-		{
-			System.out.print(val+" ");
-		}
-		System.out.println();
-		*/
+		
+		assign(arr);
+		
+		//print(arr);
+		
+		
 		double startTimeMs=System.currentTimeMillis();
-		mergeSort(arr,0,arr.length-1);
+		//mergeSort(arr,0,arr.length-1);
 		double endTimeMs=System.currentTimeMillis();
+
+		//print(arr);
 		
-		/*for(int val : arr)
-		{
-			System.out.print(val+" ");
-		}
-		
-		System.out.println();
-		*/
 		double time=endTimeMs-startTimeMs;
-		System.out.println("merge sort "+time);
+	//	System.out.println("merge sort "+time);
 	
-		for(int i=0;i<n;i++)
-		{
-			arr[i]=n-i;
-		}
-	
+		assign(arr);
+		
 		startTimeMs=System.currentTimeMillis();
-		bubbleSort(arr,0,arr.length-1);
+		//bubbleSort(arr,0,arr.length-1);
+		endTimeMs=System.currentTimeMillis();
+	
+		time=endTimeMs-startTimeMs;
+		//System.out.println("bubble sort "+time);
+	
+		
+		assign(arr);
+		
+		startTimeMs=System.currentTimeMillis();
+		quickSort(arr,0,arr.length-1);
 		endTimeMs=System.currentTimeMillis();
 		
 		time=endTimeMs-startTimeMs;
-		System.out.println("bubble sort "+time);
+		
+		print(arr);
+		System.out.println("quick sort "+time);
+	
 	
 	}
 
+	public static void print(int arr[])
+	{
+		for(int val : arr)
+		{
+			System.out.print(val+" ");
+		}
+		
+		System.out.println();
+		
+	}
+	public static void assign(int arr[])
+	{	int n=arr.length;
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=n-i;
+		}
+		
+	}
 }
